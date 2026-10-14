@@ -36,7 +36,7 @@ graph LR
     T3 --> T4["4D Tensor<br/>rank 4<br/>shape: (B,C,H,W)"]
 ```
 
-Tổng số các yếu tố = sản phẩm của tất cả các kích thước.`(2, 3, 4)`giữ `2 * 3 * 4 = 24`Các yếu tố.
+Tổng số các yếu tố = sản phẩm của tất cả các kích thước.`(2, 3, 4)`giữ $2 \cdot 3 \cdot 4 = 24$Các yếu tố.
 
 ### Các hình dạng căng thẳng trong học tập sâu
 
@@ -232,7 +232,7 @@ batch_B = np.random.randn(4, 5, 2)
 batch_mm = np.einsum("bij,bjk->bik", batch_A, batch_B)
 ```
 
-Chi phí tính toán của một sự suy giảm là sản phẩm của tất cả các kích thước chỉ số (được giữ và cộng lại).`bij,bjk->bik`với B=32, I=128, J=64, K=128: `32 * 128 * 64 * 128 = 33,554,432`số cộng nhiều.
+Chi phí tính toán của một sự suy giảm là sản phẩm của tất cả các kích thước chỉ số (được giữ và cộng lại).`bij,bjk->bik`với $B=32$- $I=128$- $J=64$- $K=128$$32 \cdot 128 \cdot 64 \cdot 128 = 33{,}554{,}432$số cộng nhiều.
 
 ### Bước 7: Cơ chế chú ý qua einsum
 
