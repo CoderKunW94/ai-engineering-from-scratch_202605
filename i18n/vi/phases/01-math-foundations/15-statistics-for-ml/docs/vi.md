@@ -141,7 +141,7 @@ Cov(X, Y) < 0:  when X increases, Y tends to decrease
 Cov(X, Y) = 0:  no linear co-movement
 ```
 
-Vì $d$các tính năng, các matrix covariance $C$là một $d \times d$Matrix nơi $C[i][j] = \operatorname{Cov}(\text{feature}_i, \text{feature}_j)$Các mục đường chọc $C[i][i]$là sự khác biệt của mỗi tính năng.
+Vì $d$các tính năng, các matrix covariance $C$là một $d \times d$Matrix nơi $C[i][j] = \mathop{\mathrm{Cov}}(\text{feature}_i, \text{feature}_j)$Các mục đường chọc $C[i][i]$là sự khác biệt của mỗi tính năng.
 
 ```
 C = | Var(x1)      Cov(x1,x2)  Cov(x1,x3) |

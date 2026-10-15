@@ -113,8 +113,8 @@ FFT yêu cầu chiều dài tín hiệu phải là một sức mạnh 2. Trong t
 
 ```math
 \begin{aligned}
-\text{Power at frequency } k: \quad P[k] &= |X[k]|^2 = \operatorname{Re}(X[k])^2 + \operatorname{Im}(X[k])^2 \\
-\text{Phase at frequency } k: \quad \phi[k] &= \operatorname{atan2}(\operatorname{Im}(X[k]), \operatorname{Re}(X[k]))
+\text{Power at frequency } k: \quad P[k] &= |X[k]|^2 = \mathop{\mathrm{Re}}(X[k])^2 + \mathop{\mathrm{Im}}(X[k])^2 \\
+\text{Phase at frequency } k: \quad \phi[k] &= \mathop{\mathrm{atan2}}(\mathop{\mathrm{Im}}(X[k]), \mathop{\mathrm{Re}}(X[k]))
 \end{aligned}
 ```
 
@@ -439,6 +439,18 @@ Các mô hình của các quang phổ có hình dạng (n_frequencies, n_time_fr
 4. **Windowing effects.**Tạo một tín hiệu là tổng hợp hai sóng âm đạo ở 10 Hz và 12 Hz (rất gần). lấy mẫu ở 128 Hz trong 1 giây. Xét quang phổ điện mà không có cửa sổ, cửa sổ Hann và cửa sổ Hamming.
 
 5. **Positional encoding analysis.**Tạo các mã hóa vị trí chân lề cho d_model = 128 và max_pos = 512.$(p_1, p_2)$, tính toán các điểm sản phẩm của các mã hóa của họ.$\lvert p_1 - p_2 \rvert$Điều gì xảy ra với điểm nhân khi khoảng cách tăng lên?
+
+### Những gợi ý
+
+**Exercise 1.**Với 128 mẫu trong 1 giây, bin $k$là $k$Hz, vì vậy cho tần số nguyên tử chỉ số giá trị lớn nhất trong thùng 1 đến 63 là tần số. chọn một số nguyên tử của hertz. tần số giữa hai thùng lan rộng ra vào hàng xóm của nó, và đỉnh chỉ đưa ra thùng gần nhất. sử dụng `generate_signal`và `magnitude_spectrum`Sau khi bạn thêm tiếng ồn, kiểm tra xem đỉnh vẫn ở cùng một thùng rác trong khi các thùng rác khác tăng lên.
+
+**Exercise 2.**Sử dụng một sức mạnh của hai chiều dài, bởi vì `fft`chia tín hiệu thành hai phần.`max(abs(a - b))`Tỷ lệ thời gian sẽ tăng khoảng như$N / \log_2 N$- Tôi không biết.
+
+**Exercise 3.**Đối với vòng xoắn vòng tròn, tính toán $y[n] = \sum_k h[k] x[(n-k) \bmod 8]$bằng tay cho $n$= 0, 1 và 2, và so sánh ba giá trị đầu tiên của `convolve_direct`và `convolve_fft`. Lòng xoắn có chiều dài 4 + 3 - 1 = 6, vì vậy trước tiên kiểm tra xem chiều dài 8 đã đủ dài.
+
+**Exercise 4.**Sử dụng `hann_window`- `hamming_window`- `apply_window`, và`power_spectrum`, và đếm các đỉnh riêng biệt giữa 9 và 13 Hz. Cả 10 Hz và 12 Hz hoàn thành các chu kỳ hoàn chỉnh trong 1 giây, vì vậy không có cửa sổ có thể trông tốt nhất.
+
+**Exercise 5.**Lập từng mã hóa với `positional_encoding(pos, 128)`. So sánh sản phẩm điểm cho các vị trí (0, 10) với sản phẩm điểm cho (100, 110): hai giá trị phải phù hợp với khoảng 1e-10. Sau đó vẽ sản phẩm điểm đối với $\lvert p_1 - p_2 \rvert$cho một cố định $p_1$- Tôi không biết.
 
 ## Các điều khoản chính
 

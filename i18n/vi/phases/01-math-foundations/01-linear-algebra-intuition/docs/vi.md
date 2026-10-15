@@ -123,10 +123,10 @@ Tỷ lệ của một số tử liệu = số lượng cột độc lập tuyế
 Vêctơ dự án **a**trên vector **b**cho thành phần của **a**hướng tới **b**- Có thể là:
 
 ```math
-\operatorname{proj}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
+\mathop{\mathrm{proj}}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
 ```
 
-Các dư $(a - \operatorname{proj}_b(a))$là trọc với $b$Sự phân hủy trực giác này là nền tảng của việc lắp đặt các hình vuông nhỏ nhất.
+Các dư $(a - \mathop{\mathrm{proj}}_b(a))$là trọc với $b$Sự phân hủy trực giác này là nền tảng của việc lắp đặt các hình vuông nhỏ nhất.
 
 Đánh chiếu là ở khắp mọi nơi trong ML:
 - Lịch chiếu tuyến tính giảm thiểu khoảng cách từ quan sát đến không gian cột -- giải pháp là một dự đoán
@@ -146,7 +146,7 @@ graph LR
 
 **Example:** $a = [3, 4]$- $b = [1, 0]$
 
-$\operatorname{proj}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
+$\mathop{\mathrm{proj}}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
 
 Dự án làm giảm thành phần y. Đây là sự giảm chiều kích trong hình thức đơn giản nhất của nó - ném đi những hướng bạn không quan tâm.
 
@@ -448,6 +448,20 @@ LoRA xứng đáng được nhắc đến đặc biệt. Nó tinh chỉnh các m
 4. Kiểm tra xem liệu lượng Gram-Schmidt thực sự là orthonormal: kiểm tra rằng mỗi cặp có điểm sản phẩm 0 và mỗi vector có độ lớn 1
 5. Tạo một số liệu 3x3 với cấp 2.`rank()`sau đó giải thích các vật lý hình học mà các cột trải dài.
 6. Đặt đường dẫn [1, 2, 3] lên [1, 1, 1].
+
+### Những gợi ý
+
+**Exercise 1.**Bắt đầu từ `cosine_similarity`, giữ giá trị giữa -1 và 1, sau đó lấy vòng cung cosine và chuyển đổi radian thành độ.`Vector([1, 0])`và `Vector([0, 1])`cho 90 và một vector tự nó sẽ cho 0.
+
+**Exercise 2.**Đặt hai nhân thang trên đường vạch của một số liệu 2x2 và đặt 0 trong hai tế bào khác. Kết quả cho [1, 1] phải là [2, 3].
+
+**Exercise 3.**Xét tính sự tương đồng cosine cho mỗi cặp 5 vector (10 cặp) và giữ giá trị lớn nhất.
+
+**Exercise 4.**Sử dụng `gram_schmidt`trên ba vector độc lập, sau đó tính toán `dot`cho mỗi cặp và `magnitude`so sánh với một dung nạp như `1e-9`, bởi vì điểm nổi không cung cấp số 0 chính xác.
+
+**Exercise 5.**Làm cho hàng thứ ba hoặc cột tổng của hai đầu tiên, do đó một hướng lặp lại. `rank()`phải trả lại 2, và các cột sau đó trải qua một máy bay qua nguồn gốc.
+
+**Exercise 6.**Xét quy mô $\frac{a \cdot b}{b \cdot b}$và nhân lên$b$- Không, không, không.`project_onto`Hãy kiểm tra phần còn lại.$a$trừ dự đoán có một điểm nhân của 0 với [1, 1, 1].
 
 ## Các điều khoản chính
 
