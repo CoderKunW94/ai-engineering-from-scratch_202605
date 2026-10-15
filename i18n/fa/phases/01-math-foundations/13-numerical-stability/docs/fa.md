@@ -173,7 +173,7 @@ log(1e-46) = -inf        (input underflowed to 0, then log(0) = -inf)
 نرم ماکس Logits رو به احتمالات تبدیل می کنه:
 
 ```math
-\operatorname{softmax}(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
+\mathop{\mathrm{softmax}}(x_i) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}
 ```
 
 بدون این ترفند، لوجت های [100، 101, 102] باعث فراز می شوند:
@@ -353,7 +353,7 @@ Layer 50: values in [0, inf]
 عادی سازی جدیدگرها و بازمستقیم فعال سازی در هر لایه:
 
 ```math
-\operatorname{LayerNorm}(x) = \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x) + \epsilon} \cdot \gamma + \beta
+\mathop{\mathrm{LayerNorm}}(x) = \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x) + \epsilon} \cdot \gamma + \beta
 ```
 
 .`epsilon`(معمولا 1e-5) مانع تقسیم صفر می شود وقتی تمام فعال سازی ها یکسان هستند.`gamma`و`beta`اجازه بده شبکه هر اندازه ای که نیاز داره رو برگردونه
@@ -579,6 +579,18 @@ check_tensor("ugly", [1.0, float('inf'), 3.0])
 4. **Gradient checking a neural network layer.**یک لایه خطی واحد را اجرا کنید`y = Wx + b`و مرور تحليلي به عقبش`numerical_gradient`برای بررسی دقت برای یک ماتریس وزن 3x2.
 
 5. **Loss scaling experiment.**تمرین را با float16 شبیه سازی کنید: gradients تصادفی را در محدوده [1e-9, 1e-3] ایجاد کنید، به float16 تبدیل کنید و اندازه گیری کنید که کدام کسری صفر می شود. سپس مقیاس خسارت را اعمال کنید (برابر 1024) ، به float16 تبدیل کنید، مقیاس را دوباره اندازه گیری کنید.
+
+### اشاره ها
+
+**Exercise 1.**3 تا را با `np.float32`قبل از اينکه اونا رو مساوي کني، بعد زنگ بزن`variance_naive`و`welford_variance`. ارزش نزدیک$10^{12}$در float32 فاصله خیلی بزرگتر از 1 است، بنابراین انتظار داشته باشید که نتیجه ساده ای از 0.6667 دور باشد و نتیجه Welford نزدیک باشد.
+
+**Exercise 2.**از شروع به`x = np.float32(1.0)`و نصفش کنم تا`np.float32(1.0) + x != np.float32(1.0)`. هر ارزش را در float32 نگه دارید، سپس آخرین مقدار را که هنوز هم مقدار را تغییر داده است با `numpy.finfo(numpy.float32).eps`، که$2^{-23}$. .
+
+**Exercise 3.**اول هر جواب رو پيش بيني$n$ارزش های برابر$c$، نتیجه اش اینه$c + \ln n$برای یک مقدار بزرگ، نتیجه نزدیک به آن مقدار است. برای ارزش های نزدیک به -1000، نتیجه نزدیک است.$-1000 + \ln n$، در حالیکه`logsumexp_naive`بازپرداخت`-inf`چون هر نمادین زیر 0 می رود.
+
+**Exercise 4.**برای$y = Wx + b$با خسارت$L$، تراشه برای $W$محصول بیرونی گرادینت بالا و $x$. خسارت رو به عنوان تابع مسطحات بسته$W$، تماس بگیرید`numerical_gradient`، و هر دو نتیجه رو به `check_gradient`. .
+
+**Exercise 5.**اندازه ها را در مقیاس یازده ای با `10 ** np.random.uniform(-9, -3, n)`و با آن تبدیل شدن`np.float16`. Float16 نمیتونه ارزش ها رو زیر حدود نگه داره$6 \times 10^{-8}$، پس انتظار داشته باشید که حدود یک چهارم از ارزش ها قبل از مقیاس بندی صفر شوند و تقریبا هیچ بعد از ضرب 1024
 
 ## اصطلاحات کلیدی
 

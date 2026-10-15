@@ -141,7 +141,7 @@ Cov(X, Y) < 0:  when X increases, Y tends to decrease
 Cov(X, Y) = 0:  no linear co-movement
 ```
 
-برای$d$ویژگی ها، ماتریس همگرایی $C$یک$d \times d$ماتریکس که در آن$C[i][j] = \operatorname{Cov}(\text{feature}_i, \text{feature}_j)$. ورودی های دیگاکال$C[i][i]$تفاوت هر ویژگی است.
+برای$d$ویژگی ها، ماتریس همگرایی $C$یک$d \times d$ماتریکس که در آن$C[i][j] = \mathop{\mathrm{Cov}}(\text{feature}_i, \text{feature}_j)$. ورودی های دیگاکال$C[i][i]$تفاوت هر ویژگی است.
 
 ```
 C = | Var(x1)      Cov(x1,x2)  Cov(x1,x3) |
