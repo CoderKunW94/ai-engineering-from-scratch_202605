@@ -123,10 +123,10 @@ Rangoir d'une matrice = nombre de colonnes indépendantes linéairement = nombre
 Vecteur de projection **a**sur le vecteur **b**donne la composante de **a**dans la direction de **b**- Le numéro de la liste:
 
 ```math
-\operatorname{proj}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
+\mathop{\mathrm{proj}}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
 ```
 
-Le résidu$(a - \operatorname{proj}_b(a))$est perpendiculaire à $b$Cette décomposition orthogonale est la base de l'ajustement des plus petits carrés.
+Le résidu$(a - \mathop{\mathrm{proj}}_b(a))$est perpendiculaire à $b$Cette décomposition orthogonale est la base de l'ajustement des plus petits carrés.
 
 La projection est partout dans ML:
 - La régression linéaire réduit au minimum la distance entre les observations et l'espace de colonne - la solution est une projection
@@ -146,7 +146,7 @@ graph LR
 
 **Example:** $a = [3, 4]$- Je suis là .$b = [1, 0]$
 
-$\operatorname{proj}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
+$\mathop{\mathrm{proj}}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
 
 La projection fait tomber la composante y. C'est la réduction de dimensionnalité sous sa forme la plus simple -- jeter les directions qui ne vous intéressent pas.
 
@@ -448,6 +448,20 @@ LoRA mérite une mention spéciale. Il affinera les grands modèles linguistique
 4. Vérifiez que la sortie Gram-Schmidt est vraiment orthonormale: vérifiez que chaque paire a un produit de point 0 et chaque vecteur a une magnitude 1
 5. Créer une matrice 3x3 avec rang 2. Vérifiez en utilisant le `rank()`Expliquez ensuite quel objet géométrique les colonnes couvrent.
 6. Le vecteur [1, 2, 3] est projeté sur [1, 1, 1].
+
+### Des indices
+
+**Exercise 1.**Commencez par `cosine_similarity`, garder la valeur entre -1 et 1, puis prendre le cosine d'arc et convertir les radians en degrés.`Vector([1, 0])`et `Vector([0, 1])`donner 90 et que le vecteur lui-même donne 0.
+
+**Exercise 2.**Mettez les deux facteurs d'échelle sur la diagonale d'une matrice 2x2 et mettez 0 dans les deux autres cellules. Le résultat pour [1, 1] doit être [2, 3].
+
+**Exercise 3.**Compute la similitude cosine pour chaque paire de 5 vecteurs (10 paires) et conserve la valeur la plus importante.
+
+**Exercise 4.**Utilisation `gram_schmidt`sur trois vecteurs indépendants, puis calculer `dot`pour chaque paire et `magnitude`Comparer avec une tolérance telle que `1e-9`, parce que le point flottant ne donne pas de zéros exacts.
+
+**Exercise 5.**Faites de la troisième rangée ou de la colonne la somme des deux premières, de sorte qu'une direction se répète. `rank()`doit retourner 2, et les colonnes ensuite couvrir un plan à travers l'origine.
+
+**Exercise 6.**Calculez l' échelle $\frac{a \cdot b}{b \cdot b}$et multiplier $b$par elle, ou appeler `project_onto`Vérifiez le reste .$a$moins la projection a un produit de point de 0 avec [1, 1, 1].
 
 ## Les termes clés
 
