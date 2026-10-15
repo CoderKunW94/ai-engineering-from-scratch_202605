@@ -141,7 +141,7 @@ Cov(X, Y) < 0:  when X increases, Y tends to decrease
 Cov(X, Y) = 0:  no linear co-movement
 ```
 
-- Evet .$d$Özellikler, kovariansa matrisi $C$- bir$d \times d$matris nerede $C[i][j] = \operatorname{Cov}(\text{feature}_i, \text{feature}_j)$- Diagonal girişler$C[i][i]$Her bir özelliğin farklılıkları.
+- Evet .$d$Özellikler, kovariansa matrisi $C$- bir$d \times d$matris nerede $C[i][j] = \mathop{\mathrm{Cov}}(\text{feature}_i, \text{feature}_j)$- Diagonal girişler$C[i][i]$Her bir özelliğin farklılıkları.
 
 ```
 C = | Var(x1)      Cov(x1,x2)  Cov(x1,x3) |
