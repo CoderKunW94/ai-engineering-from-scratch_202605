@@ -123,10 +123,10 @@ Rango de una matriz = número de columnas linealmente independientes = número d
 Vektor de proyección **a**en el vector **b**da el componente de **a**en la dirección de **b**¿Qué es esto ?
 
 ```math
-\operatorname{proj}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
+\mathop{\mathrm{proj}}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
 ```
 
-El residual $(a - \operatorname{proj}_b(a))$es perpendicular a $b$Esta descomposición ortogonal es la base de la instalación de cuadrados mínimos.
+El residual $(a - \mathop{\mathrm{proj}}_b(a))$es perpendicular a $b$Esta descomposición ortogonal es la base de la instalación de cuadrados mínimos.
 
 La proyección está en todas partes en ML:
 - Regresión lineal minimiza la distancia de las observaciones al espacio columnar - la solución es una proyección
@@ -146,7 +146,7 @@ graph LR
 
 **Example:** $a = [3, 4]$¿ Qué ?$b = [1, 0]$
 
-$\operatorname{proj}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
+$\mathop{\mathrm{proj}}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
 
 La proyección deja caer el componente y. Esto es la reducción de dimensiones en su forma más simple - tirar las direcciones que no te importan.
 
@@ -448,6 +448,20 @@ LoRA merece una mención especial. Al ajustar los modelos de lenguaje grandes de
 4. Verifique si la salida de Gram-Schmidt es realmente ortónormal: compruebe que cada par tiene producto de punto 0 y cada vector tiene magnitud 1
 5. Crear una matriz 3x3 con rango 2. Verificar usando el `rank()`Luego explica qué objeto geométrico las columnas abarcan.
 6. Proyectad el vector [1, 2, 3] hacia [1, 1, 1]. ¿Qué representa el resultado geométricamente?
+
+### Indicios
+
+**Exercise 1.**Comienza con `cosine_similarity`, mantener el valor entre -1 y 1, luego tomar el cosino del arco y convertir radianos en grados.`Vector([1, 0])`y `Vector([0, 1])`dar 90 y que un vector en sí mismo da 0.
+
+**Exercise 2.**Coloque los dos factores de escala en la diagonal de una matriz 2x2 y coloque 0 en las otras dos celdas. El resultado para [1, 1] debe ser [2, 3].
+
+**Exercise 3.**Calcule la similitud cosínica para cada par de los 5 vectores (10 pares) y mantenga el valor más grande.
+
+**Exercise 4.**Usar`gram_schmidt`en tres vectores independientes, luego calcular `dot`para cada par y `magnitude`Comparar con una tolerancia como `1e-9`, porque el punto flotante no da ceros exactos.
+
+**Exercise 5.**Haga que la tercera fila o columna sea la suma de las dos primeras, de modo que una dirección se repite. `rank()`debe devolver 2, y las columnas luego abarcan un plano a través del origen.
+
+**Exercise 6.**Calcule la escala $\frac{a \cdot b}{b \cdot b}$y multiplicarse.$b$por ella, o llamar`project_onto`- Compruebe el resto .$a$menos la proyección tiene un producto de punto de 0 con [1, 1, 1].
 
 ## Términos clave
 
