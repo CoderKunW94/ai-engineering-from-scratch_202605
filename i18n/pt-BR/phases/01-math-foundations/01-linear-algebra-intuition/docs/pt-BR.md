@@ -123,10 +123,10 @@ Rango de uma matriz = número de colunas linearmente independentes = número de 
 Vêctor de projecção **a**sobre o vetor **b**dá a componente de **a**na direcção de **b**- Não .
 
 ```math
-\operatorname{proj}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
+\mathop{\mathrm{proj}}_b(a) = \frac{a \cdot b}{b \cdot b} \, b
 ```
 
-O resíduo$(a - \operatorname{proj}_b(a))$é perpendicular a $b$Esta decomposição ortogonal é a base do ajuste de mínimos quadrados.
+O resíduo$(a - \mathop{\mathrm{proj}}_b(a))$é perpendicular a $b$Esta decomposição ortogonal é a base do ajuste de mínimos quadrados.
 
 A projecção está em todo o ML:
 - Regressão linear minimiza a distância das observações para o espaço coluna - a solução é uma projeção
@@ -146,7 +146,7 @@ graph LR
 
 **Example:** $a = [3, 4]$- Não .$b = [1, 0]$
 
-$\operatorname{proj}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
+$\mathop{\mathrm{proj}}_b(a) = (3 \cdot 1 + 4 \cdot 0) / (1 \cdot 1 + 0 \cdot 0) \cdot [1, 0] = 3 \cdot [1, 0] = [3, 0]$
 
 A projeção deixa cair o componente y. Isto é a redução de dimensionalidade na sua forma mais simples - jogar fora as direções que não nos importam.
 
@@ -448,6 +448,20 @@ A LoRA merece uma menção especial. Ele sintoniza os modelos de linguagem grand
 4. Verifique se a saída de Gram-Schmidt é verdadeiramente ortônormal: verifique se cada par tem produto ponto 0 e cada vetor tem magnitude 1
 5. Crie uma matriz 3x3 com o rango 2. Verifique usando o `rank()`Então, explique que objeto geométrico as colunas abrangem.
 6. Projete o vetor [1, 2, 3] para [1, 1, 1].
+
+### Indicios
+
+**Exercise 1.**Começa com `cosine_similarity`, manter o valor entre -1 e 1, então tomar o cosino de arco e converter radianos em graus.`Vector([1, 0])`E ...`Vector([0, 1])`dar 90 e que um vetor em si mesmo dá 0.
+
+**Exercise 2.**Coloque os dois fatores de escala na diagonal de uma matriz 2x2 e coloque 0 nas outras duas células. O resultado para [1, 1] deve ser [2, 3].
+
+**Exercise 3.**Calcule a semelhança cosínica para cada par dos 5 vetores (10 pares) e mantenha o maior valor. Verifique primeiro o seu ciclo com um vetor contra si mesmo, que deve dar 1.
+
+**Exercise 4.**Utilização`gram_schmidt`Em três vetores independentes, então computa`dot`para cada par e `magnitude`Comparar com uma tolerância como `1e-9`, porque o ponto flutuante não dá zeros exatos.
+
+**Exercise 5.**Faça a terceira linha ou coluna a soma das duas primeiras, para que uma direção se repita. `rank()`Deve retornar 2, e as colunas então atravessar um plano através da origem.
+
+**Exercise 6.**Calcule a escala $\frac{a \cdot b}{b \cdot b}$e multiplicam .$b$ou chamem.`project_onto`Verifique o resto .$a$menos a projeção tem um produto de ponto de 0 com [1, 1, 1].
 
 ## Termos-chave
 
