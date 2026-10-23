@@ -91,7 +91,7 @@ Format de sortie pour la mise à terre temporelle:
 
 - "Le chat saute autour de la marque de 4 secondes". Facile à analyser mais imprecise.
 - JSON structuré: `{"event": "jump", "start": 4.1, "end": 4.3}`Le Qwen2.5VL est équipé de ce train.
-- Basé sur des jetons: spécial `<time>4.1</time>`Les jetons sont interconnectés avec la réponse.
+- Basé sur des jetons: spécial `<time>4.1</time>`Certains modèles vidéo utilisent ce code; Qwen2.5-VL instead encode le temps dans ses M-RoPE position IDs et réponses en texte ou JSON.
 
 Le format de sortie JSON de Qwen2.5VL partage directement.
 
