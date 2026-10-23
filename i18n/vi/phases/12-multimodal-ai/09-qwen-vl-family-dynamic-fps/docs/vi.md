@@ -53,7 +53,7 @@ Kết quả: Qwen2-VL-7B phù hợp với GPT-4o trên một số điểm chuẩ
 
 Vị trí lớn của Qwen2.5VL là video. FPS động không chỉ là "chọn mẫu nhiều khung hình hơn khi cần thiết".
 
-- Mã biểu thời gian tuyệt đối. thay vì chỉ số vị trí (trình 0, 1, 2...), sử dụng dấu thời gian thực. "À 0:04, con mèo nhảy. " Mô hình thấy `<time>0.04</time>`token được giao với token khung.
+- Mã biểu thời gian tuyệt đối. thay vì chỉ số vị trí (trình 0, 1, 2...), sử dụng dấu thời gian thực. "À 0:04, con mèo nhảy. " Mô hình thấy `<time>4.0</time>`(tốc độ) token được giao với các token khung.
 - FPS động. Sample ở 1 FPS cho đoạn băng chậm, 4+ FPS cho hành động. người dùng hoặc huấn luyện viên chọn; M-RoPE thích nghi.
 - Sự chú ý cửa sổ trong ViT. Sự chú ý không gian được mở cửa sổ (địa điểm trong các khối) cho thông qua; sự chú ý toàn cầu mỗi vài lớp.
 - Mô hình phát ra JSON rõ ràng. được đào tạo trên dữ liệu gọi công cụ: "{\" công cụ\": \"click\", \"coords\": [380, 220]}".

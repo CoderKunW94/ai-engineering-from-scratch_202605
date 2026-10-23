@@ -66,7 +66,7 @@ Softmax cần toàn bộ các matrix tương đồng đồng. trong đào tạo 
 SigLIP thay thế softmax bằng sigmoid thông minh về yếu tố: cho mỗi cặp `(i, j)`, mất là phân loại nhị phân của "có cặp phù hợp không?" nhãn lớp tích cực là đường viền, tất cả mọi thứ khác là âm. mất là:
 
 ```math
-L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \operatorname{sigmoid}(S[i,j]) + (1-y_{ij}) \log \operatorname{sigmoid}(-S[i,j]) \Big]
+L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \mathop{\mathrm{sigmoid}}(S[i,j]) + (1-y_{ij}) \log \mathop{\mathrm{sigmoid}}(-S[i,j]) \Big]
 ```
 
 `y_ij = 1`Nếu`i == j`, khác 0. mỗi cặp mất tích độc lập. Không cần tất cả. Mỗi GPU tính toán khối và số tiền địa phương của mình. SigLIP 2 cân bằng để lô 32k-512k rẻ nơi CLIP cần tương xứng nhiều hơn giao tiếp.
