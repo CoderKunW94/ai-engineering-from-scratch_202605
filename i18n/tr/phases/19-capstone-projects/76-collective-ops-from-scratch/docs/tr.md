@@ -97,7 +97,7 @@ python3 code/main.py
 
 ## Gönder
 
-77-81 derslerinde kuyruk-mesh primitipleri kullanın. 77 dersinde kabloların hepsi DDP'ye düşürülür. 78 dersinde kabloların ZeRO'ya yayılması azaltılır. 79 dersinde kabloların boru hattı etkinleştirmelerine yayılması. 81 dersinde dörtü de sonundan sonuna kadar gösterime yer alır.
+77-81 derslerinde kuyruk-mesh primitipleri kullanın. 77 dersinde kabloların hepsi DDP'ye düşürülür. 78 dersinde kabloların dağılımı ZeRO'ya düşürülür. 79 dersinde, bir kolektif değil, nokta-nokta gönderme ve geri dönüş ile boru hattı etkinleştirmeleri hareket ettirir. 81 dersinde dörtü son-son demo'ya dahil edilir.
 
 ## Egzersizler
 

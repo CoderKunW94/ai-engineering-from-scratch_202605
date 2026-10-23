@@ -54,7 +54,7 @@ Dekoder, görüntü belleği belirtilerini çapraz dikkat yoluyla tüketir ve he
 
 ### Kayıpları birleştirmek
 
-`total = contrastive + lm_weight * lm`nerede`lm_weight`Bu iki kayıp, gradientleri kodlayıcı ve projeksiyonda paylaşır; dekoder sadece LM kayıpından gradient alır. Bu CoCa, BLIP ve SigLIP tarzındaki modellerin çeşitli ağırlıklarla kullandığı çok görevli bir tarif.
+`total = contrastive + lm_weight * lm`nerede`lm_weight`Bu iki kayıp, gradientleri kodlayıcı ve projeksiyonda paylaşır; dekoder sadece LM kayıpından gradient alır. Bu CoCa ve BLIP'in çeşitli ağırlıklarla kullandığı çok görevli bir tarifdir. SigLIP sadece kontrast termini tutar ve bir sigmoid çift kayıp için softmax'ı değiştirir.
 
 | Component | Loss surface | Affects |
 |-----------|--------------|---------|
