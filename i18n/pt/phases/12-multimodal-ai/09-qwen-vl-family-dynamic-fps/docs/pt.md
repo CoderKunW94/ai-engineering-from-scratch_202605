@@ -53,7 +53,7 @@ Resultado: Qwen2-VL-7B equipara GPT-4o em vários benchmarks multimodal e supero
 
 O grande passo da Qwen2.5VL foi o vídeo.
 
-- Em vez de índices de posição (quadro 0, 1, 2...), use timestamps reais. "À 0:04, o gato salta". O modelo vê`<time>0.04</time>`Tokens intercalados com tokens de quadro.
+- Em vez de índices de posição (quadro 0, 1, 2...), use timestamps reais. "À 0:04, o gato salta". O modelo vê`<time>4.0</time>`(segundos) tokens intercalados com tokens de quadro.
 - FPS dinâmico. Amostra a 1 FPS para imagens lentas, 4+ FPS para a ação. O usuário ou treinador escolhe; M-RoPE se adapta.
 - Atenção ao espaço é ventralhada (local dentro dos blocos) para a transmissão; atenção global a cada poucas camadas.
 - Formato de saída JSON explícito. Treinado em dados de chamada de ferramenta: "{\" ferramenta\": \"clique\", \"coordes\": [380, 220]}". Agente pronto para fora da caixa.
