@@ -26,7 +26,7 @@ O resultado: $W$Tem eixos ortogonais para "estilo de alto nível" (posição, id
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 onde$y_{\text{scale}}$E ...$y_{\text{bias}}$vêm de projecções afínas de $w$Normalize por mapa de características, depois restyle. "Style" aqui é a estatística de primeira e segunda ordem do mapa de características.
