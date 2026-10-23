@@ -42,7 +42,7 @@ prediction-game
 **N-gram probability:** `P(w_i | w_{i-n+1}, ..., w_{i-1})`- Düzelt .`n`(genellikle üç, dört gram için dört) Sayılardan hesaplayın:
 
 ```math
-P(w \mid \text{context}) = \frac{\operatorname{count}(\text{context}, w)}{\operatorname{count}(\text{context})}
+P(w \mid \text{context}) = \frac{\mathop{\mathrm{count}}(\text{context}, w)}{\mathop{\mathrm{count}}(\text{context})}
 ```
 
 **The zero-count problem.**Eğitimde görülmeyen herhangi bir n-gram, olasılık sıfır elde eder. Brown corpus üzerinde 2007 yılında yapılan bir çalışmada, 4 gramlı bir model bile eğitimde görülmemiş 4 gramın %30'unu elde ettiğini bulmuştur.
