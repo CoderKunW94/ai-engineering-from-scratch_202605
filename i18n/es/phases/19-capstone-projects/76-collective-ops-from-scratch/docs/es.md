@@ -97,7 +97,7 @@ Modelos de producción:
 
 ## Envío
 
-Utilice las primitivas de red de cola en las lecciones 77-81. Lección 77 los cables todos reducen a DDP. Lección 78 los cables reducen_dispersón en ZeRO. Lección 79 los cables transmitidos en activaciones de tuberías. Lección 81 compone los cuatro en la demostración de extremo a extremo.
+Utilice las primitivas de red de cola en las lecciones 77-81. Las lecciones 77 reducen todos los cables en DDP. Las lecciones 78 reducen_scatter en ZeRO. Las lecciones 79 mueven las activaciones de tuberías con envío de punto a punto y recv, no colectivo. Las lecciones 81 componen a las cuatro en la demostración de extremo a extremo.
 
 ## Los ejercicios
 
