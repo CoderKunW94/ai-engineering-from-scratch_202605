@@ -26,7 +26,7 @@ Kết quả là:$W$có các trục gần như thẳng thắn cho " phong cách c
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 nơi $y_{\text{scale}}$và $y_{\text{bias}}$đến từ các dự đoán tương tự của $w$. bình thường hóa theo bản đồ tính năng, sau đó tái tạo. "Style" ở đây là số liệu thống kê thứ nhất và thứ hai của bản đồ tính năng.
