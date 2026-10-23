@@ -66,7 +66,7 @@ Softmax a besoin de la matrice de similitude entière en synchronisation. Dans l
 SigLIP remplace softmax par un sigmoïde à base d' éléments: pour chaque paire `(i, j)`, la perte est une classification binaire de "sont-ce la paire correspondante?" les étiquettes de classe positive sont la diagonale, tout le reste est négatif.
 
 ```math
-L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \operatorname{sigmoid}(S[i,j]) + (1-y_{ij}) \log \operatorname{sigmoid}(-S[i,j]) \Big]
+L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \mathop{\mathrm{sigmoid}}(S[i,j]) + (1-y_{ij}) \log \mathop{\mathrm{sigmoid}}(-S[i,j]) \Big]
 ```
 
 `y_ij = 1`si `i == j`Chaque GPU calcule son bloc local et ses sommes. SigLIP 2 évolue à 32k-512k à moindre coût où CLIP aurait besoin d'une communication proportionnelle plus grande.

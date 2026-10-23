@@ -53,7 +53,7 @@ Résultat: Qwen2-VL-7B a paré GPT-4o sur plusieurs critères de référence mul
 
 Le changement majeur de Qwen2.5VL était la vidéo.
 
-- Les symboles de temps absolus. Au lieu d'indices de position (cadre 0, 1, 2...), utilisez des timestamps réels. "À 0:04, le chat saute. " Le modèle voit`<time>0.04</time>`des jetons interlevées avec des jetons de cadre.
+- Les symboles de temps absolus. Au lieu d'indices de position (cadre 0, 1, 2...), utilisez des timestamps réels. "À 0:04, le chat saute. " Le modèle voit`<time>4.0</time>`(deux secondes) des jetons interconnectés avec des jetons de cadre.
 - FPS dynamique. échantillonnage à 1 FPS pour des images lentes, 4 FPS+ pour l'action. L'utilisateur ou l'entraîneur choisit; M-RoPE s'adapte.
 - Attention à la fenêtre dans le ViT. L'attention spatiale est fenêtrenée (locale dans les blocs) pour le débit; attention globale toutes les quelques couches.
 - Format de sortie explicite JSON. Formé sur les données d'appel d'outil: "{\"outil\": \"cliquez\", \"coords\": [380, 220]}". Agent prêt à sortir de la boîte.
