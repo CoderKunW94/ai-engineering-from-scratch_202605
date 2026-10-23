@@ -91,7 +91,7 @@ Formatos de saída para aterragem temporal:
 
 - "O gato salta ao redor da marca de 4 segundos". Facil de analisar mas impreciso.
 - JSON estruturado: `{"event": "jump", "start": 4.1, "end": 4.3}`O Qwen2.5VL treina isto.
-- Baseado em tokens: especial `<time>4.1</time>`Os tokens estão entrelaçados com a resposta.
+- Baseado em tokens: especial `<time>4.1</time>`Alguns modelos de vídeo usam isso; Qwen2.5-VL em vez disso codifica o tempo em seus IDs de posição M-RoPE e respostas em texto ou JSON.
 
 O formato de saída JSON do Qwen2.5VL analisa diretamente.
 
