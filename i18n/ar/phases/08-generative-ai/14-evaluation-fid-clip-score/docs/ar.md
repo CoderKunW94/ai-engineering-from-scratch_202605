@@ -27,7 +27,7 @@
 
 1. استخراج ميزات Inception-v3 (2048-D) ل N صور حقيقية و N التي تم إنشاؤها.
 2. أضع غوسيان لكل بركة: متوسط الحساب$\mu_r, \mu_g$و التغيرات$\Sigma_r, \Sigma_g$. . .
-3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \operatorname{Tr}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$. . .
+3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \mathop{\mathrm{Tr}}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$. . .
 
 تفسير: مسافة فريشيت بين غوسيانين متعددين المتغيرات في مساحة الميزات. أسفل = توزيعات أكثر شبيهة.
 
