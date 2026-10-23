@@ -66,7 +66,7 @@ loss = (loss_i2t + loss_t2i) / 2
 siglip取代 softmax 用元素智能sigmoid:为每对 `(i, j)`输出是"这些是匹配的对吗?"正数类标签是对角,其他的一切都是负数.
 
 ```math
-L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \operatorname{sigmoid}(S[i,j]) + (1-y_{ij}) \log \operatorname{sigmoid}(-S[i,j]) \Big]
+L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \mathop{\mathrm{sigmoid}}(S[i,j]) + (1-y_{ij}) \log \mathop{\mathrm{sigmoid}}(-S[i,j]) \Big]
 ```
 
 `y_ij = 1`如果`i == j`任何 GPU 都需要一个全集. 每个 GPU 都计算出其本地块和数量. SigLIP 2 量化为 32k-512k 批量便宜, CLIP 需要比较多的通信.
