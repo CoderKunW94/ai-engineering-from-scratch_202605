@@ -26,7 +26,7 @@ Karras et al. (2019, NVIDIA) ने प्रस्तावित किया�
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 कहाँ$y_{\text{scale}}$और $y_{\text{bias}}$$w$. विशेषता मानचित्र के अनुसार सामान्यीकरण, फिर पुनर्व्यवहार. "शैली" यहाँ विशेषता मानचित्र के प्रथम और द्वितीय क्रम के आंकड़े है.

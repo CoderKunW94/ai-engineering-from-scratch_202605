@@ -27,7 +27,7 @@ Heusel et al. (2017). कदमः
 
 1. N वास्तविक छवियों और N उत्पन्न के लिए Inception-v3 सुविधाओं (2048-D) निकालें।
 2. प्रत्येक पूल में एक गौशियन फिटः गणना औसत $\mu_r, \mu_g$और सह-विवर्तन$\Sigma_r, \Sigma_g$. .
-3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \operatorname{Tr}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$. .
+3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \mathop{\mathrm{Tr}}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$. .
 
 व्याख्याः फीचर स्पेस में दो बहु-विविध गौसीन के बीच फ्रेचेट दूरी। निचला = अधिक समान वितरण।
 
