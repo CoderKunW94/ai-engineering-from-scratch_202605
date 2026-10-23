@@ -54,7 +54,7 @@ Bộ giải mã tiêu thụ các mã ký ức hình ảnh thông qua sự chú �
 
 ### Kết hợp các tổn thất
 
-`total = contrastive + lm_weight * lm`nơi `lm_weight`là một đường độ (thường là 1.0). hai lỗ chia sẻ gradient vào bộ mã hóa và chiếu; bộ mã hóa chỉ nhận gradient từ lỗ LM. Đây là công thức đa nhiệm mà các mô hình kiểu CoCa, BLIP và SigLIP đều sử dụng, với các trọng lượng khác nhau.
+`total = contrastive + lm_weight * lm`nơi `lm_weight`là một đường độ (thường là 1.0). hai lỗ chia sẻ gradient vào mã hóa và chiếu; decoder nhận gradient từ mất LM chỉ. Đây là công thức đa nhiệm mà CoCa và BLIP sử dụng, với các trọng lượng khác nhau. SigLIP chỉ giữ được thuật ngữ tương phản và thay đổi softmax cho một mất cặp sigmoid.
 
 | Component | Loss surface | Affects |
 |-----------|--------------|---------|

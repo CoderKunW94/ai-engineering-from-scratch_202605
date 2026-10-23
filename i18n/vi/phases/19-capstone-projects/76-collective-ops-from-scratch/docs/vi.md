@@ -97,7 +97,7 @@ Các mô hình sản xuất:
 
 ## Chuyển nó
 
-Sử dụng các nguyên thủy lưới hàng rào trong bài học 77-81. Bài học 77 dây tất cả giảm thành DDP. Bài học 78 dây giảm_scatter thành ZeRO. Bài học 79 dây phát sóng thành hoạt động đường ống. Bài học 81 kết hợp tất cả bốn trong bản demo đầu đến cuối.
+Sử dụng các nguyên thủy lưới hàng rào trong bài học 77-81. Bài học 77 dây tất cả giảm thành DDP. Bài học 78 dây giảm_scatter thành ZeRO. Bài học 79 di chuyển hoạt động đường ống với gửi đến điểm và recv, không phải là tập thể. Bài học 81 kết hợp tất cả bốn trong demo cuối đến cuối.
 
 ## Các bài tập
 
