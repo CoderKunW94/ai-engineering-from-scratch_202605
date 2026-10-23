@@ -26,7 +26,7 @@
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 کجا$y_{\text{scale}}$و$y_{\text{bias}}$از پیش بینی های مرتبط با$w$. به طور معمول در هر نقشه ویژگی، سپس تغییر سبک. " سبک " در اینجا آمار درجه اول و دوم نقشه ویژگی است.
