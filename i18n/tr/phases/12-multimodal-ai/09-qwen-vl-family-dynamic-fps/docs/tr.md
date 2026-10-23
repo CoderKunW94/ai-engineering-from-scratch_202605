@@ -53,7 +53,7 @@ Sonuç: Qwen2-VL-7B, birkaç multimodal referans değerinde GPT-4o ile eşleşti
 
 Qwen2.5 VL'nin büyük değişikliği videoydu. Dinamik FPS sadece "gerekirse daha fazla çerçeve örneklemek" değil.
 
-- Kesin zaman işaretleri. konum göstergeleri yerine (sırh 0, 1, 2...), gerçek zaman damgaları kullanın. "0:04, kedi atlar".`<time>0.04</time>`Çerçeve tokenleriyle birbirine karışmış simgeler.
+- Kesin zaman işaretleri. konum göstergeleri yerine (sırh 0, 1, 2...), gerçek zaman damgaları kullanın. "0:04, kedi atlar".`<time>4.0</time>`(sekünt) çerçeve tokenleriyle birbirine karışmış.
 - Dinamik FPS. 1 FPS'de yavaş görüntüler için örnek, 4+ FPS'de eylem için. Kullanıcı veya eğitmen seçer; M-RoPE uyarlanır.
 - ViT'de pencereler dikkat. Yerel dikkat, geçiş için pencereler (blükler içinde yerel) ve birkaç katman sonra küresel dikkat.
 - Açık JSON çıkış biçimi. Araç çağrı verileri üzerinde eğitilmiş: "{\"ağız\": \"tıklayın\", \"harekler\": [380, 220]}".

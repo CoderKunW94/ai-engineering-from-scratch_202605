@@ -66,7 +66,7 @@ Softmax bütün benzerlik matrisini senkronize ederek kullanır. dağıtılmış
 SigLIP softmax ' i elementli sigmoid ile değiştirir: her çift için `(i, j)`, kaybı "bu eşleşen çift mi?" ikili sınıf sınıflandırmasıdır.
 
 ```math
-L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \operatorname{sigmoid}(S[i,j]) + (1-y_{ij}) \log \operatorname{sigmoid}(-S[i,j]) \Big]
+L = -\frac{1}{N} \sum_{(i, j)} \Big[ y_{ij} \log \mathop{\mathrm{sigmoid}}(S[i,j]) + (1-y_{ij}) \log \mathop{\mathrm{sigmoid}}(-S[i,j]) \Big]
 ```
 
 `y_ij = 1`Eğer`i == j`Her GPU'nun yerel blok ve toplamlarını hesaplaması gerekir. SigLIP 2 32k-512k'lık bir seri olarak ucuz bir şekilde ölçebilir. CLIP'in nispeten daha fazla iletişim gerekecektir.
