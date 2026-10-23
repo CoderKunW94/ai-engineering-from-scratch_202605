@@ -26,7 +26,7 @@
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 在哪里$y_{\text{scale}}$其他$y_{\text{bias}}$来自于 $w$按特征地图进行正常化,然后重新样式化. "样式"是特征地图的第一和第二级统计数据.
