@@ -54,7 +54,7 @@ N تصویر های داخلی را به عنوان ردیف و N متن های 
 
 ### ترکیب خسارت ها
 
-`total = contrastive + lm_weight * lm`کجا`lm_weight`این دو ضرر gradient را به کدگر و پروژکتور تقسیم می کنند؛ decoder gradient را فقط از LM loss دریافت می کند. این نسخه چند وظیفه ای است که مدل های CoCa، BLIP و SigLIP با وزن های مختلف استفاده می کنند.
+`total = contrastive + lm_weight * lm`کجا`lm_weight`این دو ضرر gradient را به کدگر و پروژکتور تقسیم می کنند؛ کدگر فقط gradient را از LM دریافت می کند. این نسخه چند وظیفه ای است که CoCa و BLIP با وزن های مختلف استفاده می کنند. SigLIP فقط اصطلاح متناقض را حفظ می کند و نرم را برای یک ضایعات جفت sigmoid تغییر می دهد.
 
 | Component | Loss surface | Affects |
 |-----------|--------------|---------|
