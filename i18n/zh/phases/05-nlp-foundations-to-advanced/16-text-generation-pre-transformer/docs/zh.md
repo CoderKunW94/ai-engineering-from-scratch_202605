@@ -42,7 +42,7 @@ prediction-game
 **N-gram probability:** `P(w_i | w_{i-n+1}, ..., w_{i-1})`修复`n`根据数值计算:
 
 ```math
-P(w \mid \text{context}) = \frac{\operatorname{count}(\text{context}, w)}{\operatorname{count}(\text{context})}
+P(w \mid \text{context}) = \frac{\mathop{\mathrm{count}}(\text{context}, w)}{\mathop{\mathrm{count}}(\text{context})}
 ```
 
 **The zero-count problem.**任何在训练中没有看到的 n-gram 得到了零的概率.2007年对布朗体的研究发现,即使是4克模型的30%的4克在训练中没有看到.你不能在没有平滑的情况下评估任何真实文本.
