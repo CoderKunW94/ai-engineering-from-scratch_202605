@@ -27,7 +27,7 @@ Heusel et al. (2017). Passo:
 
 1. Extrair recursos Inception-v3 (2048-D) para N imagens reais e N geradas.
 2. Aplique um Gaussian a cada piscina: média de cálculo $\mu_r, \mu_g$e covariância $\Sigma_r, \Sigma_g$- Não .
-3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \operatorname{Tr}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$- Não .
+3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \mathop{\mathrm{Tr}}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$- Não .
 
 Interpretação: Distância de Fréchet entre dois Gaussianos multivariados no espaço de características.
 
