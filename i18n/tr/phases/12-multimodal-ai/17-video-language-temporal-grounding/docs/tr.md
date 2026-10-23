@@ -91,7 +91,7 @@ Zamanlı yerleştirme için çıkış biçimleri:
 
 - "Kedi 4 saniyelik çizginin etrafında atlar". Anlamak kolaydır ama net değil.
 - Yapılandırılmış JSON: `{"event": "jump", "start": 4.1, "end": 4.3}`- Qwen2.5 VL bu şekilde çalıştırıyor.
-- Token tabanlı: özel `<time>4.1</time>`Bu, Qwen2.5VL'nin iç biçimi.
+- Token tabanlı: özel `<time>4.1</time>`Bazı video modeller bunu kullanır; Qwen2.5-VL bunun yerine M-RoPE pozisyon kimliklerinde ve cevaplarında zamanı metinde veya JSON'da kodlar.
 
 Token tabanlı, aşağı akıntılı kullanım için en doğru. Qwen2.5-VL'nin JSON çıkış biçimi doğrudan analiz edilir.
 
