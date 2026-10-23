@@ -26,7 +26,7 @@ Le résultat: $W$Il a des axes orthogonaux pour "style de haut niveau" (position
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 où $y_{\text{scale}}$et $y_{\text{bias}}$proviennent de projections affine de $w$Normalement par carte de fonctionnalités, puis re-style. "Style" ici est la statistique de premier et deuxième ordre de la carte de fonctionnalités.

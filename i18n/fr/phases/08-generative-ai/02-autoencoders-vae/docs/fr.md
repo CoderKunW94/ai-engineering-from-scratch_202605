@@ -23,7 +23,7 @@ En 2026, les VAE sont rarement livrés indépendamment  ils ont été dépassés
 
 **Autoencoder.** $z = \text{encoder}(x)$- Je suis là .$\hat{x} = \text{decoder}(z)$, perte = $\lVert x - \hat{x} \rVert^2$- L'espace de code est non structuré.
 
-**VAE encoder.**Les sorties sont de deux vecteurs: $\mu(x)$et $\log \sigma^2(x)$- Ils définissent ...$q(z \mid x) = \mathcal{N}(\mu, \operatorname{diag}(\sigma^2))$- Je suis désolé .
+**VAE encoder.**Les sorties sont de deux vecteurs: $\mu(x)$et $\log \sigma^2(x)$- Ils définissent ...$q(z \mid x) = \mathcal{N}(\mu, \mathop{\mathrm{diag}}(\sigma^2))$- Je suis désolé .
 
 **Reparameterization trick.**Prise d' échantillons à partir de $q(z \mid x)$L'échantillon est réécrit comme $z = \mu + \sigma \cdot \epsilon$où $\epsilon \sim \mathcal{N}(0, I)$- Maintenant .$z$est une fonction déterministe de $(\mu, \sigma)$+ un bruit non paramétrique  des gradients circulent `μ`et $\sigma$- Je suis désolé .
 

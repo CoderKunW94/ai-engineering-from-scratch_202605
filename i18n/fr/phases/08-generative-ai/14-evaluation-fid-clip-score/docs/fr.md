@@ -27,7 +27,7 @@ Heusel et coll. (2017).
 
 1. Extraire les fonctionnalités Inception-v3 (2048-D) pour N images réelles et N générées.
 2. Pour chaque piscine , un Gaussien .$\mu_r, \mu_g$et la covariance $\Sigma_r, \Sigma_g$- Je suis désolé .
-3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \operatorname{Tr}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$- Je suis désolé .
+3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \mathop{\mathrm{Tr}}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$- Je suis désolé .
 
 Interprétation: distance Fréchet entre deux gaussiens multivariés dans l'espace de caractéristiques.
 
