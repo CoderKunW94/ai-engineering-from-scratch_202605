@@ -91,7 +91,7 @@ Các định dạng đầu ra cho việc đặt đất thời gian:
 
 - "Căn cưng nhảy quanh dấu hiệu 4 giây". Mời phân tích nhưng không chính xác.
 - JSON được cấu trúc: `{"event": "jump", "start": 4.1, "end": 4.3}`- Qwen2.5VL chạy theo.
-- Dựa trên token: đặc biệt `<time>4.1</time>`- Đơn vị nội bộ của Qwen2.5VL.
+- Dựa trên token: đặc biệt `<time>4.1</time>`Một số mô hình video sử dụng điều này; Qwen2.5-VL thay vào đó mã hóa thời gian trong ID vị trí M-RoPE của nó và câu trả lời bằng văn bản hoặc JSON.
 
 Xây dựng dựa trên token chính xác nhất cho việc sử dụng dòng chảy. định dạng đầu ra JSON của Qwen2.5VL phân tích trực tiếp.
 
