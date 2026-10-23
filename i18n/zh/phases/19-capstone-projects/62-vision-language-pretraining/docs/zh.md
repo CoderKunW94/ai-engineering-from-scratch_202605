@@ -54,7 +54,7 @@ flowchart TB
 
 ### 结合损失
 
-`total = contrastive + lm_weight * lm`在哪里`lm_weight`两种损失在编码器和投影中分享梯度;除码器仅从LM损失中获得梯度.这是CoCa,BLIP和SigLIP类型模型使用的多任务配方,具有各种权重.
+`total = contrastive + lm_weight * lm`在哪里`lm_weight`两种损失在编码器和投影中分享梯度; 解码器仅从LM损失中获得梯度. 这是CoCa和BLIP使用的多任务配方,具有不同的权重.SigLIP只保留对比术语,并替换软max为sigmoid对损失.
 
 | Component | Loss surface | Affects |
 |-----------|--------------|---------|
