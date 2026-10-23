@@ -27,7 +27,7 @@ Heusel et al. (2017).
 
 1. Extraer las características de Inception-v3 (2048-D) para N imágenes reales y N generadas.
 2. Encaja un gaussiano en cada piscina: media de cálculo $\mu_r, \mu_g$y la covarianza $\Sigma_r, \Sigma_g$¿ Qué ?
-3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \operatorname{Tr}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$¿ Qué ?
+3. $\text{FID} = \lVert \mu_r - \mu_g \rVert^2 + \mathop{\mathrm{Tr}}\left(\Sigma_r + \Sigma_g - 2 \cdot (\Sigma_r \cdot \Sigma_g)^{0.5}\right)$¿ Qué ?
 
 Interpretación: distancia de Fréchet entre dos Gaussianos multivariados en el espacio de características.
 

@@ -26,7 +26,7 @@ El resultado:$W$tiene aproximadamente ejes ortogonales para "estilo de alto nive
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 donde$y_{\text{scale}}$y $y_{\text{bias}}$se derivan de proyecciones afines de $w$Normaliza por mapa de características, luego rediseña. "estilo" aquí es la estadística de primer y segundo orden del mapa de características.
