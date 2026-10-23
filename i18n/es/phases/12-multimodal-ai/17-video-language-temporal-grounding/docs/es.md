@@ -91,7 +91,7 @@ Formatos de salida para la tierra temporal:
 
 - Texto libre: "El gato salta alrededor de la marca de 4 segundos".
 - JSON estructurado: `{"event": "jump", "start": 4.1, "end": 4.3}`El Qwen2.5VL está equipado con esto.
-- Basado en tokens: especial `<time>4.1</time>`Los tokens se entrelazaron con la respuesta.
+- Basado en tokens: especial `<time>4.1</time>`Algunos modelos de video usan esto; Qwen2.5-VL en su lugar codifica el tiempo en sus ID de posición M-RoPE y respuestas en texto o JSON.
 
 El formato de salida JSON de Qwen2.5VL analiza directamente.
 
