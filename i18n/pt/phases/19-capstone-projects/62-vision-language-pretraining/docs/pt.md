@@ -54,7 +54,7 @@ O decodificador consome tokens de memória de imagem através da atenção cruza
 
 ### Combinação das perdas
 
-`total = contrastive + lm_weight * lm`onde`lm_weight`O decodificador recebe gradiente apenas da perda LM. Esta é a receita multi-tarefa que os modelos de estilo CoCa, BLIP e SigLIP usam todos, com várias ponderações.
+`total = contrastive + lm_weight * lm`onde`lm_weight`O decodificador recebe gradiente da perda LM apenas. Esta é a receita multi-tarefa que CoCa e BLIP usam, com várias ponderações. SigLIP mantém apenas o termo contrastivo e troca softmax para uma perda de par sigmoide.
 
 | Component | Loss surface | Affects |
 |-----------|--------------|---------|

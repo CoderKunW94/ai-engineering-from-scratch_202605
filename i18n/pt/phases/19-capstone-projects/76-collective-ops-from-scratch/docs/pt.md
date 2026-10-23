@@ -97,7 +97,7 @@ Padrões de produção:
 
 ## Envia-o
 
-Use os primitivos de rede de fila nas lições 77-81. Lição 77 fios todos reduzir em DDP. Lição 78 fios reduzir_dispersão em ZeRO. Lição 79 fios transmitir em ativas de pipeline. Lição 81 compõe os quatro para a demonstração de ponta a ponta.
+Use os primitivos de rede de fila nas lições 77-81. Lição 77 fios todos reduzem em DDP. Lição 78 fios reduzem_dispersão em ZeRO. Lição 79 move ativações de pipeline com ponto a ponto enviar e recv, não um coletivo. Lição 81 compõe os quatro para a demo de ponta a ponta.
 
 ## Exercícios
 
