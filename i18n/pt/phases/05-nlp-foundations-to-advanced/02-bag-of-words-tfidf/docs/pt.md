@@ -26,7 +26,7 @@ Esta lição constrói uma bolsa de palavras, depois TF-IDF, a partir do zero, m
 ```math
 \begin{aligned}
 \text{TF-IDF}(w, d) &= \text{TF}(w, d) \cdot \text{IDF}(w) \\
-&= \frac{\operatorname{count}(w \text{ in } d)}{|d|} \cdot \log\frac{N}{\operatorname{df}(w)}
+&= \frac{\mathop{\mathrm{count}}(w \text{ in } d)}{|d|} \cdot \log\frac{N}{\mathop{\mathrm{df}}(w)}
 \end{aligned}
 ```
 
@@ -126,7 +126,7 @@ def tfidf(bow_matrix):
 >>> tfidf(bow)
 ```
 
-Três documentos, cinco palavras vocabulares (`the`- Não .`cat`- Não .`sat`- Não .`dog`- Não .`ran` ).`the`Aparece em todos os três, por isso, as forças armadas são baixas.`dog`Os vetores são escassos (a maioria das entradas são pequenas) e as palavras discriminatórias pop.
+Três documentos, cinco palavras vocabulares (`the`- Não .`cat`- Não .`sat`- Não .`dog`- Não .`ran` ).`the`Aparece em todos os três, por isso, as forças armadas são baixas.`dog`Com um vocabulário real de milhares de palavras, estes vetores são escassos (a maioria das entradas são zero).
 
 ### Passo 5: Normalização de linhas L2
 
