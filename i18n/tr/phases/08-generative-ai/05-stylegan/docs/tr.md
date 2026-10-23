@@ -26,7 +26,7 @@ Sonuç:$W$"Yüksek seviye stili" (koşul, kimlik) vs. "yenis stili" (yalnızca �
 **AdaIN.**
 
 ```math
-\operatorname{AdaIN}(x, y) = y_{\text{scale}} \cdot \frac{x - \operatorname{mean}(x)}{\operatorname{std}(x)} + y_{\text{bias}}
+\mathop{\mathrm{AdaIN}}(x, y) = y_{\text{scale}} \cdot \frac{x - \mathop{\mathrm{mean}}(x)}{\mathop{\mathrm{std}}(x)} + y_{\text{bias}}
 ```
 
 nerede$y_{\text{scale}}$ve $y_{\text{bias}}$$w$"Style" burada özellik haritasının birinci ve ikinci sıradaki istatistikleridir.
