@@ -54,7 +54,7 @@ Le décodeur consomme des jetons de mémoire d'image via l'attention croisée et
 
 ### Combiner les pertes
 
-`total = contrastive + lm_weight * lm`où `lm_weight`Le décodeur reçoit le gradient de la perte LM seulement. C'est la recette multi-tasks que les modèles de style CoCa, BLIP et SigLIP utilisent tous, avec diverses pondérations.
+`total = contrastive + lm_weight * lm`où `lm_weight`Le décodeur reçoit le gradient de la perte de LM seulement. C'est la recette multi-tasks que CoCa et BLIP utilisent, avec diverses pondérations. SigLIP conserve seulement le terme contrastant et swaps softmax pour une perte de paire sigmoïde.
 
 | Component | Loss surface | Affects |
 |-----------|--------------|---------|

@@ -97,7 +97,7 @@ Modèles de production:
 
 ## La faire partir
 
-Utilisez les primitifs de filet de filet dans les leçons 77-81. Les fils 77 réduisent tous en DDP. Les fils 78 réduisent_scatter en ZeRO. Les fils 79 diffusent en activations de pipeline. Les fils 81 composent les quatre dans la démo de bout en bout.
+Utilisez les primitifs de filet de filet dans les leçons 77-81. Les fils 77 réduisent tous en DDP. Les fils 78 réduisent_scatter en ZeRO.
 
 ## Exercices
 
