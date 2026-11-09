@@ -3,7 +3,7 @@
 > Eğitim paralel ve FLOP bağlıdır. İferense seri ve hafıza bağlıdır. Farklı şişek boynuzları, farklı numaralar.
 
 **Type:** Build
-**Languages:** Python
+**Languages:** Python, Rust
 **Prerequisites:** Phase 7 · 02 (Self-Attention), Phase 7 · 05 (Full Transformer), Phase 7 · 07 (GPT)
 **Time:** ~75 minutes
 
@@ -128,7 +128,7 @@ flash-attention-memory
 iso-machine {"machine":"kv-cache"}
 ```
 
-Bakın .`code/main.py`Bu uygulamayı uyguluyoruz:
+Bakın .`code/main.py`, ya da Rust limanı`code/main.rs`Rust versiyonunu çalıştırmak için:`rustc --edition 2021 -O code/main.rs -o /tmp/lesson && /tmp/lesson`Bu uygulamayı uyguluyoruz:
 
 1. Saf bir adam .$O(N^2)$Gelişmiş dekodör.
 2. A.$O(N)$KV-cached dekodör.
@@ -176,9 +176,9 @@ def tiled_softmax_dot(q, K, V, tile=4):
 
 Bit-iynet çıkış `softmax(qK) V`Bir çekimde, ama her zaman çalışma seti bir `tile × d_head`- Blok, tam değil.`N × d_head`- Evet .
 
-### Adım 3: 100 token neslinde saf ve önbelleğe alınan kodlama ile karşılaştırın
+### Adım 3: Saçma ile önbelleğe alınan kodlama karşılaştır
 
-Dikkat operasyonlarını say.$O(N^2)$= 5050 .$O(N)$Kodu her ikisini de basıyor.
+İki dekodör de aynı sorgu anahtarı karşılaştırma yapar: adım `t`- Evet .`t`Tokenler, yani toplam 1 + 2 + ... + N = N(N+1)/2. Kod N = 10 kullanır ve her bir dekodör için 55 basar. 100 token nesli için, her ikisi de 5050 karşılaştırma yaparlar. Kaş K ve V projelerini kaydetir. Bir önbelleği olmadan, her adım K ve V'yi tekrar hesaplar ve böylece 100 token jenerasyonu 5050 token durumunu hesaplar. Kaşla, her token'in K ve V'leri bir kez hesaplanır, bu yüzden aynı nesil 100 token durumunu hesaplar.
 
 ## Kullan
 
